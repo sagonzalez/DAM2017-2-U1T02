@@ -33,15 +33,28 @@ function consonantes(cadena){
     return numConsonantes;
 }
 
-function letras(cad1){
-    //Alan
+function letras(cad){
+    return cad.replace(/ /g,"").length;
 }
 
 function palindromo(cad){
-    //Alan
+	cad = cad.replace(/ /g,"");
+	let letras = cad.length;
+	let temp = "";
+	while(letras>=0){
+		
+		temp += cad.charAt(--letras);
+	}
+
+	if(cad === temp){
+		return "Es Palindromo";
+	}else{
+		return "No es Palindromo";
+	}
 }
 
-console.log("num de palabras: "+palabras("maldita sea joder tio"));
-console.log("num de vocales: "+vocales("maldita sea joder tio"));
-console.log("num de consonantes: "+consonantes("maldita sea joder tio"));
-//console.log("letras sin espacios: "+letras("maldita sea joder tio"));
+console.log("num de palabras: "+palabras("hola mundo mundo"));
+console.log("num de vocales: "+vocales("aplicaciones"));
+console.log("num de consonantes: "+consonantes("aplicaciones"));
+console.log("letras sin espacios: "+letras("javascript y typescript"));
+console.log("Es Palindromo? "+palindromo("luz azul"));
